@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ajax-ex-boolflix</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container_header">
+        <input type="text" name="" value="" placeholder="Search">
+        <button type="button" name="Search">Search</button>
+      </div>
+    </header>
+    <main>
+      <div class="container_main">
+      </div>
+    </main>
+    <script id="template" type="text/x-handlebars-template">
+      <ul class="results">
+        <li> Title: {{titolo}} </li>
+        <li> Original Title: {{titolo_originale}} </li>
+        <li> Language: {{lingua}} </li>
+        <li> Vote: {{voto}} </li>
+      </ul>
+    </script>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
