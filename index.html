@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/912c80e664.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -15,16 +16,23 @@
       </div>
     </header>
     <main>
-      <div class="container_main">
+      <section class="sect_film">
+      <div class="container_film">
+        <div id="searched"></div>
+        <div class="results"></div>
       </div>
+      </section>
     </main>
-    <script id="template" type="text/x-handlebars-template">
-      <ul class="results">
+    <script id="inforesults-template" type="text/x-handlebars-template">
+      <ul class="info">
         <li> Title: {{titolo}} </li>
         <li> Original Title: {{titolo_originale}} </li>
-        <li> Language: {{lingua}} </li>
-        <li> Vote: {{voto}} </li>
+        <li> Language: {{{lingua}}} </li>
+        <li> Vote: {{{voto}}} </li>
       </ul>
+    </script>
+    <script id="flags-template" type="text/x-handlebars-template">
+      <img class="lang_img" src="flags/{{lang}}.png" alt="{{lang}}">
     </script>
     <script src="main.js" charset="utf-8"></script>
   </body>
