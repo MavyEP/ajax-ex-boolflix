@@ -28,7 +28,7 @@ $(document).ready(function () {
       //se la mia ricerca é la seconda mi pulisce prima gli elementi prima cercati
       $(".container_film .results ul").remove();
       $(".container_film p").remove();
-      searched_result_film.append('<p> Films for : " ' + text_user + ' "</p>');
+      searched_result_film.append('<p class="title"> Movies for &nbsp; <span class="info_title">"' + text_user + '"</span></p>');
         $.ajax({
           'url' : "https://api.themoviedb.org/3/search/movie",
           'method' : "GET" ,
@@ -77,7 +77,7 @@ $(document).ready(function () {
 
         $(".container_tv .results ul").remove();
         $(".container_tv p").remove();
-        searched_result_tv.append('<p> Series for : " ' + text_user + ' "</p>');
+        searched_result_tv.append('<p class="title"> Series for &nbsp; <span class="info_title">"' + text_user + '"</span></p>');
           $.ajax({
             'url' : "https://api.themoviedb.org/3/search/tv",
             'method' : "GET" ,
@@ -86,7 +86,6 @@ $(document).ready(function () {
               'query' : text_user,
             },
             'success' : function(data) {
-              console.log(data);
               var tv = data.results;
               for (var i = 0; i < tv.length; i++) {
                 var tv_corrente = tv[i];

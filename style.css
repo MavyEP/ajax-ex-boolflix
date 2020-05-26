@@ -7,13 +7,17 @@
 body {
   background-color: black;
   height: 100vh;
+  font-family: 'Roboto Slab', serif;
 }
 
 header {
-  background-color: pink;
-  height: 100px;
+  height: 120px;
   display: flex;
   align-items: center;
+  border-bottom: 2px inset #e50914;
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/3b48f428-24ed-4692-bb04-bc7771854131/e64d7f61-5a9b-498f-9fc6-8bb6b60c5837/IT-it-20200302-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+  background-position: center;
+  background-size: contain;
 }
 
 main {
@@ -22,12 +26,50 @@ main {
   height: calc(100% - 100px)
 }
 
+.wrap {
+  height: 120px;
+  width: 100%;
+  background: rgb(0,0,0);
+  background: linear-gradient(124deg, rgba(0,0,0,0.8743872549019608) 0%, rgba(0,0,0,0.6811099439775911) 22%, rgba(0,0,0,0.020045518207282953) 100%);
+  position: absolute;
+  z-index: 1;
+}
 .container_header {
-  background-color: pink;
-  width: 1400px;
+  width: 1500px;
   margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.right_header {
+  display: flex;
+  align-items: center;
+}
+
+.right_header input {
+  border: none;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+#search {
+  background-color: #e50914;
+  border: none;
+  padding: 7px 17px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+#logo {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #e50914;
+  font-size: 32px;
 }
 
 .container_film {
@@ -65,11 +107,26 @@ main {
 }
 
 .searched p {
+  padding: 10px;
+  font-weight: normal;
+}
+
+.title {
+  color: #e50914;
+  font-size: 28px;
+}
+
+.info_title {
   color: white;
-  margin-left: 8px;
+  font-size: 22px;
 }
 
 .lang_img {
   height: 30px;
   vertical-align: middle;
+}
+
+/* FOCUS */
+.right_header input:focus {
+  outline-color: grey;
 }
