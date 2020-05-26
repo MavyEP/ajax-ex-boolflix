@@ -33,10 +33,14 @@
         <li> Original Title: {{titolo_originale}} </li>
         <li> Language: {{{lingua}}} </li>
         <li> Vote: {{{voto}}} </li>
+        <li>  {{{poster}}} </li>
       </ul>
     </script>
     <script id="flags-template" type="text/x-handlebars-template">
       <img class="lang_img" src="flags/{{lang}}.png" alt="{{lang}}">
+    </script>
+    <script id="poster-template" type="text/x-handlebars-template">
+      <img class="poster_img" src="https://image.tmdb.org/t/p/w92{{test}}" alt="{{lang}}">
     </script>
     <script src="main.js" charset="utf-8"></script>
   </body>

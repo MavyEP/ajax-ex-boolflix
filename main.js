@@ -11,6 +11,9 @@ $(document).ready(function () {
   var source_flag = $("#flags-template").html();
   var template_flag = Handlebars.compile(source_flag);
 
+  var source_poster = $("#poster-template").html();
+  var template_poster = Handlebars.compile(source_poster);
+
   var result_api = {
     titolo : '',
     titolo_originale : '',
@@ -57,6 +60,10 @@ $(document).ready(function () {
                   result_api.titolo_originale = film_corrente.original_title;
                   result_api.lingua = flag_img;
                   result_api.voto = global_html_stars;
+                  var poster_query_end = {test : ""};
+                  poster_query_end.test = film_corrente.poster_path;
+                  var poster  = template_poster(poster_query_end);
+                  result_api.poster = poster;
                   //se titolo e titolo originale sono uguali mettere none
                   //stampo gli ul in pagine per quanti sono i film.lenght
                   var html = template(result_api);
@@ -80,8 +87,6 @@ $(document).ready(function () {
             },
             'success' : function(data) {
               console.log(data);
-
-
               var tv = data.results;
               for (var i = 0; i < tv.length; i++) {
                 var tv_corrente = tv[i];
@@ -104,19 +109,15 @@ $(document).ready(function () {
                 result_api.titolo_originale = tv_corrente.original_name;
                 result_api.lingua = flag_img;
                 result_api.voto = global_html_stars;
+                var poster_query_end = {test : ""};
+                poster_query_end.test = tv_corrente.poster_path;
+                var poster  = template_poster(poster_query_end);
+                result_api.poster = poster;
                 //se titolo e titolo originale sono uguali mettere none
                 //stampo gli ul in pagine per quanti sono i film.lenght
                 var html = template(result_api);
                 $('.container_tv .results').append(html)
               };
-
-
-
-
-
-
-
-
             } ,
             'error' : function () {
               console.log("error! tv");
