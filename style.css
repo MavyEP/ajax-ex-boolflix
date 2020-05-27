@@ -134,6 +134,7 @@ main {
 }
 
 .background {
+ background-image: linear-gradient( rgba(0, 0, 0, 0.52), rgba(255, 255, 255, 0.4));
   width: 100vw;
   position: fixed;
   top: 110px;
@@ -154,7 +155,6 @@ main {
   padding: 25px 10px 10px;
   font-weight: normal;
   text-align: center;
-  z-index: 1;
 }
 
 .title {
