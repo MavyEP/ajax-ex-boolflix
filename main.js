@@ -21,6 +21,9 @@ $(document).ready(function () {
     voto : ''
   };
 
+  setInterval(backimg_slider, 3000);
+
+
   search_button.click(function () {
     //prendo il testo che l'utente vuole cercare
     var text_user = input_search.val().trim().toLowerCase();
@@ -124,6 +127,7 @@ $(document).ready(function () {
           })
         //pulisco l'input di ricerca
         input_search.val("");
+        $('.sect_film').addClass("padding-bottom");
       } else {
         console.log("digitare qualcosa da cercare");
     }
@@ -153,7 +157,25 @@ $(document).ready(function () {
       }
   return fun_result;
 }
-//!!!!!!!!!!!!!!!!!!!!!!FUNZIONI GENERICHE FINE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+function backimg_slider() {
+  var img_visible = $('.background .active');
+  var img_next = img_visible.next();
+  img_visible.fadeOut("slow" , "swing" , function () {
+    img_visible.removeClass("active");
+  })
+  if (img_next.length == 0) {
+      img_next = $('.background img:first-child');
+      img_next.fadeIn("slow" , "swing"  , function () {
+        img_next.addClass('active');
+      })
+    } else {
+      img_next.fadeIn("slow" , "swing" , function () {
+        img_next.addClass('active');
+      })
+  }
+}
+// !!!!!!!!!!!!!!!!!!!!!!FUNZIONI GENERICHE FINE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //!!!!!!!!!!!!!!!!!!!!!!INPUT CON KEYBOARD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

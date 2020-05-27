@@ -32,20 +32,31 @@
       </div>
       </section>
     </main>
+    <div class="background">
+      <img class="active"src="https://wallpaperaccess.com/full/288727.jpg" alt="">
+      <img src="https://mr.comingsoon.it/imgdb/locandine/poster/56430_hd.jpg" alt="">
+      <img src="https://wallpaperaccess.com/full/329583.jpg" alt="">
+      <img src="https://images5.alphacoders.com/525/525783.jpg" alt="">
+      <img src="https://hdqwalls.com/download/warcraft-movie-1920x1080.jpg" alt="">
+      <img src="https://wallpaperboat.com/wp-content/uploads/2019/12/The-Witcher-Netflix-09.jpg" alt="">
+      <img src="http://www.wallpaperez.org/wallpaper/movie/Suicide-Squad-2630.jpg" alt="">
+      <img src="https://wallpapercart.com/wp-content/uploads/2019/05/Movie-Toy-Story-4-Woody-Jessie-Buzz-Lightyear-HD-Wallpaper.jpg" alt="">
+      <img src="https://images7.alphacoders.com/431/thumb-1920-431312.jpg" alt="">
+    </div>
     <script id="inforesults-template" type="text/x-handlebars-template">
       <ul class="info">
+        <li>  {{{poster}}} </li>
         <li> Title: {{titolo}} </li>
         <li> Original Title: {{titolo_originale}} </li>
         <li> Language: {{{lingua}}} </li>
         <li> Vote: {{{voto}}} </li>
-        <li>  {{{poster}}} </li>
       </ul>
     </script>
     <script id="flags-template" type="text/x-handlebars-template">
       <img class="lang_img" src="flags/{{lang}}.png" alt="{{lang}}">
     </script>
     <script id="poster-template" type="text/x-handlebars-template">
-      <img class="poster_img" src="https://image.tmdb.org/t/p/w92{{test}}" alt="{{lang}}">
+      <img class="poster_img" id="poster" src="https://image.tmdb.org/t/p/w185{{test}}" alt="{{lang}}">
     </script>
     <script src="main.js" charset="utf-8"></script>
   </body>
