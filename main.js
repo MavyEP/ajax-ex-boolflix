@@ -1,19 +1,26 @@
 $(document).ready(function () {
+  //luogo dove utente scrivera l elemento da ricercare
   var input_search = $('header .container_header input');
+  //tasto search collegato all input sopra
   var search_button = $('header .container_header button');
   var searched_result_film = $('#searched_film');
   var searched_result_tv = $('#searched_tv');
+  //"pasword" per permessi del sito
   var api_key = "d541fec680af5c662fac780f597581ff" ;
 
+// primo template
   var source   = $("#inforesults-template").html();
   var template = Handlebars.compile(source);
 
+// secondo template per le bandiere della lingua
   var source_flag = $("#flags-template").html();
   var template_flag = Handlebars.compile(source_flag);
 
+// terzo template per il poster di ogni elemento
   var source_poster = $("#poster-template").html();
   var template_poster = Handlebars.compile(source_poster);
 
+//variabile per cio che mi restituisce la richiesta di ajax
   var result_api = {
     titolo : '',
     titolo_originale : '',
@@ -21,10 +28,12 @@ $(document).ready(function () {
     voto : ''
   };
 
+//funzione img background carousel
   setInterval(backimg_slider, 3000);
 
-
+//funzione bottone search per avviare la ricerca
   search_button.click(function () {
+    $('#logo_main').addClass("disable")
     //prendo il testo che l'utente vuole cercare
     var text_user = input_search.val().trim().toLowerCase();
       if (text_user !== ("")) {
@@ -63,8 +72,8 @@ $(document).ready(function () {
                   result_api.titolo_originale = film_corrente.original_title;
                   result_api.lingua = flag_img;
                   result_api.voto = global_html_stars;
-                  var poster_query_end = {test : ""};
-                  poster_query_end.test = film_corrente.poster_path;
+                  var poster_query_end = {img : ""};
+                  poster_query_end.img = film_corrente.poster_path;
                   var poster  = template_poster(poster_query_end);
                   result_api.poster = poster;
                   //se titolo e titolo originale sono uguali mettere none
@@ -111,8 +120,8 @@ $(document).ready(function () {
                 result_api.titolo_originale = tv_corrente.original_name;
                 result_api.lingua = flag_img;
                 result_api.voto = global_html_stars;
-                var poster_query_end = {test : ""};
-                poster_query_end.test = tv_corrente.poster_path;
+                var poster_query_end = {img : ""};
+                poster_query_end.img = tv_corrente.poster_path;
                 var poster  = template_poster(poster_query_end);
                 result_api.poster = poster;
                 //se titolo e titolo originale sono uguali mettere none
@@ -142,7 +151,7 @@ $(document).ready(function () {
     var inter = Math.round(division);
     return  inter;
   }
-
+  //funzione che genera la bandiera per la lingua
   function language_flag(language)  {
   var flags = ['en', 'it' , 'fr'];
   var fun_result = "";
@@ -158,23 +167,24 @@ $(document).ready(function () {
   return fun_result;
 }
 
-function backimg_slider() {
-  var img_visible = $('.background .active');
-  var img_next = img_visible.next();
-  img_visible.fadeOut("slow" , "swing" , function () {
-    img_visible.removeClass("active");
-  })
-  if (img_next.length == 0) {
-      img_next = $('.background img:first-child');
-      img_next.fadeIn("slow" , "swing"  , function () {
-        img_next.addClass('active');
-      })
-    } else {
-      img_next.fadeIn("slow" , "swing" , function () {
-        img_next.addClass('active');
-      })
+//funzione che genera il background carousel
+  function backimg_slider() {
+    var img_visible = $('.background .active');
+    var img_next = img_visible.next();
+    img_visible.fadeOut("slow" , "swing" , function () {
+      img_visible.removeClass("active");
+    })
+    if (img_next.length == 0) {
+        img_next = $('.background img:first-child');
+        img_next.fadeIn("slow" , "swing"  , function () {
+          img_next.addClass('active');
+        })
+      } else {
+        img_next.fadeIn("slow" , "swing" , function () {
+          img_next.addClass('active');
+        })
+    }
   }
-}
 // !!!!!!!!!!!!!!!!!!!!!!FUNZIONI GENERICHE FINE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //!!!!!!!!!!!!!!!!!!!!!!INPUT CON KEYBOARD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

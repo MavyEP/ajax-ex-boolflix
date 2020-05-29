@@ -8,6 +8,8 @@ body {
   background-color: black;
   font-family: 'Roboto Slab', serif;
   position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
 header {
@@ -26,11 +28,11 @@ header {
 }
 
 main {
-  margin-top: 110px;
   width: 100%;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.60) 50%, rgba(0,0,0,0.50) 100%);
   z-index: 1;
+  padding-top: 110px;
 }
 
 .wrap {
@@ -42,7 +44,7 @@ main {
   z-index: 1;
 }
 .container_header {
-  width: 1500px;
+  width: 1400px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -106,6 +108,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   z-index: 1;
+  justify-content: center;
 }
 
 .results ul {
@@ -134,13 +137,26 @@ main {
 }
 
 .background {
- background-image: linear-gradient( rgba(0, 0, 0, 0.52), rgba(255, 255, 255, 0.4));
+ background-image: linear-gradient( rgba(0, 0, 0, 0.52), rgba(255, 255, 255, 0.25));
   width: 100vw;
   position: fixed;
   top: 110px;
   left: 0;
   z-index: -1;
 }
+
+#logo_main {
+  font-weight: bold;
+  color: #e50914;
+  font-size: 120px;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
 
 .background > img {
   z-index: -1;
@@ -152,9 +168,11 @@ main {
 }
 
 .searched p {
-  padding: 25px 10px 10px;
-  font-weight: normal;
+  padding: 25px 10px 25px;
+  font-weight: bold;
+  font-size: 35px;
   text-align: center;
+  filter: drop-shadow(0 0 0.75rem black);
 }
 
 .title {
@@ -183,4 +201,8 @@ main {
 
 .active {
   display: block !important ;
+}
+
+.disable {
+  display: none !important;
 }
