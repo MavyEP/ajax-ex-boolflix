@@ -25,7 +25,8 @@ $(document).ready(function () {
     titolo : '',
     titolo_originale : '',
     lingua : '',
-    voto : ''
+    voto : '',
+    overview : ''
   };
 
 //funzione img background carousel
@@ -80,6 +81,7 @@ $(document).ready(function () {
                     var poster  = template_poster(poster_query_end);
                     result_api.poster = poster;
                   }
+                  result_api.overview = film_corrente.overview;
                   //se titolo e titolo originale sono uguali mettere none
                   //stampo gli ul in pagine per quanti sono i film.lenght
                   var html = template(result_api);
@@ -132,6 +134,7 @@ $(document).ready(function () {
                   var poster  = template_poster(poster_query_end);
                   result_api.poster = poster;
                 }
+                result_api.overview = tv_corrente.overview;
                 //se titolo e titolo originale sono uguali mettere none
                 //stampo gli ul in pagine per quanti sono i film.lenght
                 var html = template(result_api);
