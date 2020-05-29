@@ -74,8 +74,12 @@ $(document).ready(function () {
                   result_api.voto = global_html_stars;
                   var poster_query_end = {img : ""};
                   poster_query_end.img = film_corrente.poster_path;
-                  var poster  = template_poster(poster_query_end);
-                  result_api.poster = poster;
+                  if (film_corrente.poster_path == null) {
+                    result_api.poster = '<img class="poster_img" id="poster" src="img/not-found-img.jpg">'
+                  } else {
+                    var poster  = template_poster(poster_query_end);
+                    result_api.poster = poster;
+                  }
                   //se titolo e titolo originale sono uguali mettere none
                   //stampo gli ul in pagine per quanti sono i film.lenght
                   var html = template(result_api);
@@ -122,8 +126,12 @@ $(document).ready(function () {
                 result_api.voto = global_html_stars;
                 var poster_query_end = {img : ""};
                 poster_query_end.img = tv_corrente.poster_path;
-                var poster  = template_poster(poster_query_end);
-                result_api.poster = poster;
+                if (tv_corrente.poster_path == null) {
+                  result_api.poster = '<img class="poster_img" id="poster" src="img/not-found-img.jpg">'
+                } else {
+                  var poster  = template_poster(poster_query_end);
+                  result_api.poster = poster;
+                }
                 //se titolo e titolo originale sono uguali mettere none
                 //stampo gli ul in pagine per quanti sono i film.lenght
                 var html = template(result_api);
