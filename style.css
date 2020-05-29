@@ -75,12 +75,20 @@ main {
   z-index: 1;
 }
 
+#search:hover {
+  cursor: pointer;
+}
+
 #logo {
   font-weight: bold;
   font-size: 1rem;
   color: #e50914;
   font-size: 32px;
   z-index: 1;
+}
+
+#logo:hover {
+  cursor: pointer;
 }
 
 #poster {
@@ -205,4 +213,8 @@ main {
 
 .disable {
   display: none !important;
+}
+
+.info:hover {
+  cursor: pointer;
 }

@@ -151,6 +151,12 @@ $(document).ready(function () {
   });
 
 
+  $('main').delegate('.info', 'mouseenter', function() {
+  $(this).children("li:first-child").addClass("disable")
+  });
+  $('main').delegate('.info', 'mouseleave', function() {
+  $(this).children("li:first-child").removeClass("disable")
+  });
 //!!!!!!!!!!!!!!!!!!!!!!FUNZIONI GENERICHE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   //funzione che genera il numero di voto da 1 a 5
